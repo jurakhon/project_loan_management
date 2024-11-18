@@ -1,0 +1,151 @@
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    background-color: cornflowerblue;
+}
+
+header p {
+    margin: 20px 5px;
+    padding: 5px 0;
+}
+
+.rows {
+    border: 1px solid grey;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header styles */
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+h1, .welcome-msg {
+    font-weight: 300;
+}
+
+p {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Transaction list styles */
+.transaction-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.transaction-summary {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-list li {
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction-list li:nth-child(odd) {
+    background-color: #f9fbfc;
+}
+
+/* Button styles */
+.btn-primary {
+    display: inline-block;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+
+.list-of-links a {
+    padding: 15px 15px;
+    padding-top: 10px;
+    font-size: 20px;
+    margin: 15px 15px;
+}
+
+
+/* Footer styles */
+footer {
+    background-color: cornflowerblue;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    font-size: 0.9rem;
+}
+
+footer p {
+    color: white;
+    margin: 5px;
+    padding: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .transaction-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

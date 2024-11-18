@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Loan Detail Page{% endblock %}
+
+{% block content %}
+               {% if user.is_authenticated %}
+
+    <div class="container">
+
+    <div class="rows">
+        <h3>ID: {{ payment_detail.id }}</h3>
+        <p>payment amount: {{ payment_detail.payment_amount }}</p>
+        <p>payment date: {{ payment_detail.payment_date }}</p>
+        <p>due date: {{ payment_detail.loan.due_date }}</p>
+
+
+    </div>
+        {% else %}
+    <h1>You are not logged in. please login to view.</h1>
+    {% endif %}
+    </div>
+    
+{% endblock %}
+
+
+
+{% block footer %}{% endblock %}

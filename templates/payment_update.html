@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Payment Create{% endblock %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Update Payment</button>
+    </form>
+{% endblock %}
+
+
+
+{% block footer %}{% endblock %}

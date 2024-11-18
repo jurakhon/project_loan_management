@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Loan List{% endblock %}
+
+{% block content %}
+               {% if user.is_authenticated %}
+
+    <div class="container">
+    {% for loan in loan_list %}
+    <div class="rows">
+        <h3>ID: {{ loan.id }}</h3>
+        <h3>user: {{ loan.user }}</h3>
+        <p>amount: {{ loan.loan_amount }}</p>
+        <p>due date: {{ loan.due_date }}</p>
+
+        
+        <a href="{% url 'loan_detail' loan.id %}" class="btn btn-info">Detail</a>
+        <a href="{% url 'loan_update' loan.id %}" class="btn btn-info">Update</a>
+        <a href="{% url 'loan_delete' loan.id %}" class="btn btn-info">Delete</a>
+    </div>
+    {% endfor %}
+        {% else %}
+    <h1>You are not logged in. please login to view.</h1>
+    {% endif %}
+    </div>
+    
+{% endblock %}
+
+
+
+{% block footer %}{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Create Limit for User{% endblock %}
+
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Create Limit</button>
+    </form>
+{% endblock %}
+
+
+
+{% block footer %}{% endblock %}

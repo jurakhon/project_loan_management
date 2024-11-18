@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Completed Loans
+{% endblock %}
+
+{% block content %}
+    <h1>Completed Loans</h1>
+    <ul>
+        {% for loan in completed_loan_list %}
+            <li>
+                <strong>ID:</strong> {{ loan.id }}<br>
+                <strong>User:</strong> {{ loan.user.username }}<br>
+                <strong>Description:</strong> {{ loan.description }}<br>
+                <strong>Due Date:</strong> {{ loan.due_date }}<br>
+                <strong>Status:</strong> {{ loan.status }}<br>
+                <strong>Completion date:</strong> {{ loan.updated_at }}<br>
+            </li>
+        {% empty %}
+            <li>No completed loans found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

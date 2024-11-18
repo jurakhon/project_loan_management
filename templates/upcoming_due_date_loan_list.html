@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Upcoming Due Dates
+{% endblock %}
+{% block content %}
+ {% if user.is_authenticated %}
+    <h1>Loans with Upcoming Due Dates</h1>
+    <ul>
+        {% for loan in upcoming_due_date_loan_list %}
+            <li>
+                <strong>User:</strong> {{ loan.user.username }}<br>
+                <strong>Amount:</strong> {{ loan.loan_amount }}<br>
+                <strong>Description:</strong> {{ loan.description }}<br>
+                <strong>Due Date:</strong> {{ loan.due_date }}<br>
+                <strong>Status:</strong> {{ loan.status }}<br>
+            </li>
+        {% empty %}
+            <li>No loans with upcoming due dates found.</li>
+        {% endfor %}
+    </ul>
+            {% else %}
+    <h1>You are not logged in. please login to view.</h1>
+    {% endif %}
+{% endblock %}
