@@ -15,7 +15,7 @@
         <p>amount: {{ payment.payment_amount }}</p>
         <p>payment date: {{ payment.payment_date }}</p>
 
-        
+
         <a href="{% url 'payment_detail' payment.id %}" class="btn btn-info">Detail</a>
         <a href="{% url 'payment_update' payment.id %}" class="btn btn-info">Update</a>
         <a href="{% url 'payment_delete' payment.id %}" class="btn btn-info">Delete</a>
@@ -25,7 +25,7 @@
     <h1>You are not logged in. please login to view.</h1>
     {% endif %}
     </div>
-    
+
 {% endblock %}
 
 

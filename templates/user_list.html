@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}User List{% endblock %}
+
+{% block content %}
+               {% if user.is_authenticated %}
+
+    <div class="container">
+                   <h2>Users</h2>
+    {% for user in user_list %}
+    <div class="rows">
+        <h3>ID: {{ user.id }}</h3>
+        <p>username: {{ user.username }}</p>
+    
+            <a href="{% url 'user_detail' user.id %}" class="btn btn-info">Detail</a>
+            <a href="{% url 'limit_update' user.id %}" class="btn btn-info">UpdateLimit</a>
+
+        
+
+        
+
+    </div>
+    {% endfor %}
+        {% else %}
+    <h1>You are not logged in. please login to view.</h1>
+    {% endif %}
+    </div>
+    
+{% endblock %}
+
+
+
+{% block footer %}{% endblock %}

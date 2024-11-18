@@ -15,7 +15,10 @@ urlpatterns = [
     path('paymentupdate/<int:pk>', PaymentUpdateView.as_view(), name='payment_update'),
     path('paymentdelete/<int:pk>', PaymentDeleteView.as_view(), name='payment_delete'),
     path('limitcreate/', LimitCreateView.as_view(), name='limit_create'),
-    path('limitupdate/', LimitUpdateView.as_view(), name='limit_update'),
+    path('limitupdate/<int:pk>', LimitUpdateView.as_view(), name='limit_update'),
+    path('userlist/', UserListView.as_view(), name='user_list'),
+    path('userdetail/<int:pk>', UserDetailView.as_view(), name='user_detail'),
+
 
 
 ]

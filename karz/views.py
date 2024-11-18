@@ -89,7 +89,7 @@ class PaymentDeleteView(DeleteView):
 class LimitCreateView(CreateView):
     model = Limit
     context_object_name = "limit_create"
-    fields = ['user','amount']
+    fields = ['user','limit_amount']
     template_name = "limit_create.html"
     success_url = reverse_lazy("limit_list")
 
@@ -97,8 +97,8 @@ class LimitUpdateView(UpdateView):
     model = Limit
     context_object_name = "limit_update"
     template_name = "limit_update.html"
-    fields = ['user','amount']
-    success_url = reverse_lazy("limit_list")
+    fields = ['user','limit_amount']
+    success_url = reverse_lazy("home")
 
 class CompletedLoanListView(ListView):
     model = Loan
@@ -115,3 +115,13 @@ class UpcomingDueDateLoanListView(ListView):
 
     def get_queryset(self):
         return Loan.objects.filter(status='pending').order_by('due_date')
+
+class UserListView(ListView):
+    model = User
+    context_object_name = "user_list"
+    template_name = "user_list.html"
+
+class UserDetailView(DetailView):
+    model = User
+    context_object_name = "user_detail"
+    template_name = "user_detail.html"

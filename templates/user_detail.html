@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}User List{% endblock %}
+
+{% block content %}
+               {% if user.is_authenticated %}
+
+    <div class="container">
+                   
+    <div class="rows">
+        <h3>ID: {{ user_detail.id }}</h3>
+        <p>username: {{ user_detail.username }}</p>
+        
+
+        
+
+    </div>
+        {% else %}
+    <h1>You are not logged in. please login to view.</h1>
+    {% endif %}
+    </div>
+    
+{% endblock %}
+
+
+
+{% block footer %}{% endblock %}
