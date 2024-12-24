@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-k4*q1qdu!k375b(ujry_@qv_*uii6hoiaoeqb#v2kas7=&bd^d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -131,9 +131,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+#STATICFILES_DIRS = [
+#    BASE_DIR / 'static',
+#]
 
 AUTH_USER_MODEL = 'karz.User'
 
@@ -143,6 +143,9 @@ AUTH_USER_MODEL = 'karz.User'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
